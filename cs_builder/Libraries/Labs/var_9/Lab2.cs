@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Xml.XPath;
-using System.ComponentModel.DataAnnotations;
 
-namespace Libraries.Labs
+namespace cs_builder.Libraries.Labs.var_9
 {
     static class Lab2
     {
@@ -18,37 +13,39 @@ namespace Libraries.Labs
             var list = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 99, -101 };
             var predicate = (int x, int y) => x < y;
 
-            try {
+            try
+            {
                 //load dll into RAM
                 Assembly assembly = Assembly.LoadFrom(DLL_PATH);
                 //initializing type
                 Type Lab2Functions = assembly.GetType("Lab2DLL.Lab2DllFunctions");
-                
+
                 //Generic MinMax
                 MethodInfo GenericMinMax = Lab2Functions.GetMethod("MaxMin");
                 //Int minMax
                 MethodInfo IntMinMax = GenericMinMax.MakeGenericMethod(typeof(int));
 
-                var result = IntMinMax.Invoke(null, new object[2] {list,predicate});
-                if(result != null )
+                var result = IntMinMax.Invoke(null, new object[2] { list, predicate });
+                if (result != null)
                 {
-                    (int min,int max) = (Tuple<int, int>)result;
+                    (int min, int max) = (Tuple<int, int>)result;
                     Console.WriteLine($"Min and Max from the List : {min} and {max}");
                 }
 
                 //toHex function
                 MethodInfo asHex = Lab2Functions.GetMethod("asHex");
-                
-                result = asHex.Invoke(null,new object[2] {212.32, 5});
-                if(result != null)
+
+                result = asHex.Invoke(null, new object[2] { 212.32, 20 });
+                if (result != null)
                 {
-                    Console.WriteLine($"212.32 in base 10 = {result.ToString()} in base 16");
+                    Console.WriteLine($"212.32 in base 10 = {(string)result} in base 16");
                 }
 
 
 
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
             }
         }

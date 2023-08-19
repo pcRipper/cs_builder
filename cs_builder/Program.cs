@@ -1,5 +1,6 @@
-﻿using Extensions;
-using Libraries.Labs;
+﻿using cs_builder.Libraries.Labs.var_4;
+using Extensions;
+using System.Collections;
 
 namespace cs_builder
 {
@@ -8,7 +9,7 @@ namespace cs_builder
     {
         static void Main(string[] args)
         {
-            Lab2.lab2_func();
+            Lab1.lab1_main();
         }
     }
 }

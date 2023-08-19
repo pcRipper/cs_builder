@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Libraries.Labs
+namespace cs_builder.Libraries.Labs.var_9
 {
     interface Engine
     {
@@ -26,15 +26,15 @@ namespace Libraries.Labs
         }
         public ICE(ICE obj)
         {
-            this.volume = obj.volume;
-            this.power = obj.power;
-            this.gas_consumption = obj.gas_consumption;
+            volume = obj.volume;
+            power = obj.power;
+            gas_consumption = obj.gas_consumption;
         }
-        public string getInfo() => 
+        public string getInfo() =>
             $"Engine specification :" +
-            $"\n\tVolume          = {this.volume}L" +
-            $"\n\tPower           = {this.power}L/S" +
-            $"\n\tGas Consumption = {this.gas_consumption}L/100km"
+            $"\n\tVolume          = {volume}L" +
+            $"\n\tPower           = {power}L/S" +
+            $"\n\tGas Consumption = {gas_consumption}L/100km"
         ;
 
         public override bool Equals(object? obj)
@@ -42,9 +42,9 @@ namespace Libraries.Labs
             if (obj == null) return false;
             ICE other = (ICE)obj;
             return other == null ? false :
-                this.power == other.power &&
-                this.volume == other.volume &&
-                this.gas_consumption == other.gas_consumption
+                power == other.power &&
+                volume == other.volume &&
+                gas_consumption == other.gas_consumption
             ;
         }
     }
@@ -65,19 +65,19 @@ namespace Libraries.Labs
 
         public string getInfo() =>
             $"Engine Specification :" +
-            $"\n\tPower =        {this.power}" +
-            $"\n\tVoltage =      {this.voltage}" +
-            $"\n\tPhase Amount = {this.phaseAmount}"
+            $"\n\tPower =        {power}" +
+            $"\n\tVoltage =      {voltage}" +
+            $"\n\tPhase Amount = {phaseAmount}"
         ;
 
         public override bool Equals(object? obj)
         {
-            if(obj == null) return false;
+            if (obj == null) return false;
             ElectricEngine other = (ElectricEngine)obj;
             return other == null ? false :
-                this.power == other.power &&
-                this.voltage == other.voltage &&
-                this.phaseAmount == other.phaseAmount
+                power == other.power &&
+                voltage == other.voltage &&
+                phaseAmount == other.phaseAmount
             ;
         }
     }
@@ -107,7 +107,8 @@ namespace Libraries.Labs
                 new PerpetuumMobile()
             };
 
-            data.MapIn((x) => {
+            data.MapIn((x) =>
+            {
                 try
                 {
                     Console.WriteLine(x.getInfo());
@@ -126,7 +127,7 @@ namespace Libraries.Labs
 
             Console.WriteLine($"Compare first from the list with second : {data[0].Equals(data[1])}");
             Console.WriteLine($"Compare third from the list with forth : {data[2].Equals(data[3])}");
-            
+
         }
     }
 }

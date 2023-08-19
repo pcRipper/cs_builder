@@ -23,7 +23,7 @@ namespace Lab2DLL
             foreach(T t in container)
             {
                 if (predicate(t, min)) min = t;
-                if (predicate(max, t)) max = t;
+                else if (predicate(max, t)) max = t;
             }
             return new Tuple<T,T>(min,max);
         }
