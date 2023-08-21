@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -123,6 +124,16 @@ namespace Extensions
         {
             if (left.Key == right.Key) return 0;
             return 1;
+        }
+
+        static public ReturnType Fold<InputType, ReturnType>(this IEnumerable container, Func<ReturnType, InputType, ReturnType> func)
+        {
+            ReturnType accumulator = default(ReturnType);
+            foreach (InputType item in container)
+            {
+                accumulator = func(accumulator, item);
+            }
+            return accumulator;
         }
 
     }

@@ -7,7 +7,7 @@ namespace cs_builder.Libraries.Labs.var_9
 {
     static class Lab2
     {
-        public static void lab2_func()
+        public static void lab2_main()
         {
             const string DLL_PATH = "E:\\TEMP_BACKUP\\code\\cs\\cs_builder\\Lab2_DLL\\bin\\Debug\\Lab2_DLL.dll";
             var list = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 99, -101 };

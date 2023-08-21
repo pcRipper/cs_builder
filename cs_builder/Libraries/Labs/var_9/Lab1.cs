@@ -97,7 +97,7 @@ namespace cs_builder.Libraries.Labs.var_9
 
     static class Lab1
     {
-        public static void lab1_func()
+        public static void lab1_main()
         {
             List<Engine> data = new List<Engine>() {
                 new ICE(2.2d,13,11),
