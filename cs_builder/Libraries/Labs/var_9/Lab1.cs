@@ -24,19 +24,12 @@ namespace cs_builder.Libraries.Labs.var_9
             this.power = power;
             this.gas_consumption = gas_consumption;
         }
-        public ICE(ICE obj)
-        {
-            volume = obj.volume;
-            power = obj.power;
-            gas_consumption = obj.gas_consumption;
-        }
         public string getInfo() =>
             $"Engine specification :" +
             $"\n\tVolume          = {volume}L" +
             $"\n\tPower           = {power}L/S" +
             $"\n\tGas Consumption = {gas_consumption}L/100km"
         ;
-
         public override bool Equals(object? obj)
         {
             if (obj == null) return false;

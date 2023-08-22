@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,11 +86,11 @@ namespace Extensions
             Console.Write($"\b\b;\n");
         }
 
-        public static List<F> MapOn<T,F>(this List<T> list,Func<T,F> transform)
+        public static ICollection<ReturnType> MapOn<ReturnType, ContainerType>(this ICollection<ContainerType> list,Func<ContainerType, ReturnType> transform)
         {
-            List<F> result = new List<F>();
+            ICollection<ReturnType> result = (ICollection<ReturnType>)Activator.CreateInstance(list.GetType());
 
-            foreach (T item in list)
+            foreach (ContainerType item in list)
             {
                 result.Add(transform(item));
             }
@@ -97,12 +98,9 @@ namespace Extensions
             return result;
         }
 
-        public static void MapIn<T>(this List<T> list,Func<T,T> transform)
+        public static void MapIn<ContainerType>(this ICollection<ContainerType> list,Func<ContainerType, ContainerType> transform)
         {
-            for(int k = 0;k < list.Count; k++)
-            {
-                list[k] = transform(list[k]);
-            }
+            list = MapOn<ContainerType, ContainerType>(list, transform);   
         }
 
         public static void Show<T>(this T[] array)
