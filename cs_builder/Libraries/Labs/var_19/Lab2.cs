@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace cs_builder.Libraries.Labs.var_9
+namespace cs_builder.Libraries.Labs.var_19
 {
     static class Lab2
     {

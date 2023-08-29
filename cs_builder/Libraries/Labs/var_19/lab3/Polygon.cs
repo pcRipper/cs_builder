@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace cs_builder.Libraries.Labs.var_9.lab3
+namespace cs_builder.Libraries.Labs.var_19.lab3
 {
     interface Drawable
     {

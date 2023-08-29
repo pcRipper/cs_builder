@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace cs_builder.Libraries.Labs.var_9
+namespace cs_builder.Libraries.Labs.var_19
 {
     internal static class Lab4
     {

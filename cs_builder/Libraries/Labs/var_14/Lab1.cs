@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs_builder.Libraries.Labs.var_4
+namespace cs_builder.Libraries.Labs.var_14
 {
     abstract class Chessman
     {
@@ -59,7 +59,6 @@ namespace cs_builder.Libraries.Labs.var_4
             return obj == null ? false : obj.GetType() == GetType();
         }
     }
-
     class Queen : Chessman
     {
         public override bool canMove(string from, string to)
@@ -81,7 +80,7 @@ namespace cs_builder.Libraries.Labs.var_4
 
     static class Lab1
     {
-        public static void lab1_main()
+        public static void lab1()
         {
             List<Chessman> list = new List<Chessman>() { new Queen(), new Bishop(), new Rook(), new Knight() };
 

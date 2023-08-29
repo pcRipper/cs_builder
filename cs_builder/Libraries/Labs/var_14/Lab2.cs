@@ -6,11 +6,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs_builder.Libraries.Labs.var_4
+namespace cs_builder.Libraries.Labs.var_14
 {
     internal class Lab2
     {
-        public static void lab2_main()
+        public static void lab2()
         {
             const string DLL_PATH = "E:\\TEMP_BACKUP\\code\\cs\\cs_builder\\Lab2_DLL\\bin\\Debug\\Lab2_DLL.dll";
             

@@ -1,6 +1,6 @@
-﻿//using cs_builder.Libraries.Labs.var_4;
-using cs_builder.Libraries.Labs.var_9;
-using cs_builder.Libraries.Labs.var_9.lab3;
+﻿using cs_builder.Libraries.Labs.var_19;
+//using cs_builder.Libraries.Labs.var_14.lab3;
+//using cs_builder.Libraries.Labs.var_14;
 using Extensions;
 using System.Collections;
 using System.ComponentModel;
@@ -10,12 +10,11 @@ using System.Xml;
 
 namespace cs_builder
 {
-   
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            
         }
     }
 }

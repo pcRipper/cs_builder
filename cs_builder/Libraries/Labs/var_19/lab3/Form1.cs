@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace cs_builder.Libraries.Labs.var_9.lab3
+namespace cs_builder.Libraries.Labs.var_19.lab3
 {
     public partial class Form1 : Form
     {
