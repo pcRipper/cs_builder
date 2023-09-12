@@ -15,9 +15,9 @@ namespace cs_builder.Libraries.Labs.var_19
             var func2 = (double x) => 1 / (x * x + 1);
             var func3 = (double x) => x;
 
-            //Console.WriteLine($"Area under function[1/x^2] curve [2,10] = {integral(2,10,func1)}");
-            //Console.WriteLine($"Area under function[1/(x^2 + 1)] curve [1,35] = {integral(1,35,func2)}");
-            //Console.WriteLine($"Area under function[x] curve [-5,5] = {integral(0,1,func3)}");
+            Console.WriteLine($"Area under function[1/x^2] curve [2,10] = {integral(2, 10, func1)}");
+            Console.WriteLine($"Area under function[1/(x^2 + 1)] curve [1,35] = {integral(1, 35, func2)}");
+            Console.WriteLine($"Area under function[x] curve [-5,5] = {integral(0, 1, func3)}");
 
             EventHandler handler = (sender, args) => { Console.WriteLine("\nMaksym"); };
             eventFunction(handler);

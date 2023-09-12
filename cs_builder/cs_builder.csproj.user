@@ -8,5 +8,8 @@
     <Compile Update="Libraries\Labs\var_19\lab3\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Libraries\Labs\var_19\lab8\Form_8.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
