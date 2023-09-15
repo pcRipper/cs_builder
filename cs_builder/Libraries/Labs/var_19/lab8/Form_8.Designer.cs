@@ -34,6 +34,8 @@
             button_update = new Button();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
+            label_message = new Label();
+            label10 = new Label();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -104,6 +106,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label_message);
+            tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
@@ -129,6 +133,24 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Control Data";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label_message
+            // 
+            label_message.AutoSize = true;
+            label_message.Location = new Point(65, 14);
+            label_message.Name = "label_message";
+            label_message.Size = new Size(16, 15);
+            label_message.TabIndex = 19;
+            label_message.Text = "...";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(6, 14);
+            label10.Name = "label10";
+            label10.Size = new Size(62, 15);
+            label10.TabIndex = 18;
+            label10.Text = "Message : ";
             // 
             // label9
             // 
@@ -328,5 +350,7 @@
         private Label label7;
         private Label label9;
         private Label label8;
+        private Label label_message;
+        private Label label10;
     }
 }

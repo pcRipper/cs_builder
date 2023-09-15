@@ -88,7 +88,6 @@ namespace cs_builder.Libraries.Labs.var_19.lab8
             textBox_surname.Text = data[1].ToString();
             textBox_name.Text = data[2].ToString();
             textBox_middleName.Text = data[3].ToString();
-            //textBox_DOB.Text = new DateTime(data[4].ToString());
             textBox_DOB.Text = Convert.ToDateTime(data[4]).ToString("yyyy-MM-dd");
             textBox_money.Text = data[5].ToString();
         }
@@ -117,7 +116,13 @@ namespace cs_builder.Libraries.Labs.var_19.lab8
 
                 if (result.IsT1)
                 {
-                    Console.WriteLine("Error occured : " + result.AsT1.Message);
+                    label_message.ForeColor = Color.Red;
+                    label_message.Text = "Error occured : " + result.AsT1.Message;
+                }
+                else
+                {
+                    label_message.ForeColor = Color.Green;
+                    label_message.Text = $"Item with id({textBox_aID.Text}) successfully updated";
                 }
             }
             else
@@ -136,7 +141,13 @@ namespace cs_builder.Libraries.Labs.var_19.lab8
 
                 if (result.IsT1)
                 {
-                    Console.WriteLine("Error occured : " + result.AsT1.Message);
+                    label_message.ForeColor = Color.Red;
+                    label_message.Text = "Error occured : " + result.AsT1.Message;
+                }
+                else
+                {
+                    label_message.ForeColor = Color.Green;
+                    label_message.Text = $"Record with id({textBox_aID.Text}) successfully inserted";
                 }
             }
         }
@@ -154,7 +165,8 @@ namespace cs_builder.Libraries.Labs.var_19.lab8
 
             if (result.IsT1)
             {
-                MessageBox.Show("Error occured : " + result.AsT1.Message);
+                label_message.ForeColor = Color.Red;
+                label_message.Text = "Error occured : " + result.AsT1.Message;
             }
         }
     }

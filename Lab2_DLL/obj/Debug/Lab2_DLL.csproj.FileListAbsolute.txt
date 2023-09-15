@@ -4,3 +4,5 @@ E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.AssemblyRef
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.CoreCompileInputs.cache
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.dll
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.pdb
+D:\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.AssemblyReference.cache
+D:\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.CoreCompileInputs.cache
