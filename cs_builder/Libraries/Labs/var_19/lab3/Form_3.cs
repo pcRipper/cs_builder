@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace cs_builder.Libraries.Labs.var_19.lab3
 {
-    public partial class Form1 : Form
+    public partial class Form_3 : Form
     {
-        public Form1()
+        public Form_3()
         {
             InitializeComponent();
             pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -21,8 +21,15 @@ namespace cs_builder.Libraries.Labs.var_19.lab3
 
         private void Draw_Click(object sender, EventArgs e)
         {
-            var figure = new Polygon(Convert.ToInt32(textBox_posX.Text), Convert.ToInt32(textBox_posY.Text));
-            figure.Draw(ref pictureBox1, (object)Convert.ToInt32(textBox_SidesAmount.Text));
+            try
+            {
+                var figure = new Polygon(Convert.ToInt32(textBox_posX.Text), Convert.ToInt32(textBox_posY.Text));
+                figure.Draw(ref pictureBox1, (object)Convert.ToInt32(textBox_SidesAmount.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Clear_Click(object sender, EventArgs e)

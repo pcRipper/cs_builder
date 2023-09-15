@@ -20,10 +20,10 @@ namespace cs_builder.Libraries.Labs.var_19.lab3
 
         public static void form_activator()
         {
-            Form1 form = new Form1();
+            Form_3 form = new Form_3();
             
             form.Show();
-            
+
             Application.Run(form);
         }
     }

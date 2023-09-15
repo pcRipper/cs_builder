@@ -1,8 +1,14 @@
+D:\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.AssemblyReference.cache
+D:\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.CoreCompileInputs.cache
+E:\TEMP_BACKUP\code\cs\trash\cs_builder\Lab2_DLL\bin\Debug\Lab2_DLL.dll
+E:\TEMP_BACKUP\code\cs\trash\cs_builder\Lab2_DLL\bin\Debug\Lab2_DLL.pdb
+E:\TEMP_BACKUP\code\cs\trash\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.AssemblyReference.cache
+E:\TEMP_BACKUP\code\cs\trash\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.CoreCompileInputs.cache
+E:\TEMP_BACKUP\code\cs\trash\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.dll
+E:\TEMP_BACKUP\code\cs\trash\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.pdb
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\bin\Debug\Lab2_DLL.dll
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\bin\Debug\Lab2_DLL.pdb
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.AssemblyReference.cache
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.CoreCompileInputs.cache
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.dll
 E:\TEMP_BACKUP\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.pdb
-D:\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.AssemblyReference.cache
-D:\code\cs\cs_builder\Lab2_DLL\obj\Debug\Lab2_DLL.csproj.CoreCompileInputs.cache

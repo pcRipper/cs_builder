@@ -1,12 +1,10 @@
-﻿
+﻿using Extensions;
 using cs_builder.Libraries.Labs.var_19.lab8;
-using DB.PG;
-using Extensions;
+using cs_builder.Libraries.Labs.var_19.lab3;
 
 namespace cs_builder
 {
-
-   internal class Program
+    internal class Program
     {
         static void Main(string[] args)
         {

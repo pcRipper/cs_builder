@@ -5,7 +5,7 @@
     <Compile Update="Libraries\Labs\var_14\lab3\Form_Drawer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Libraries\Labs\var_19\lab3\Form1.cs">
+    <Compile Update="Libraries\Labs\var_19\lab3\Form_3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Libraries\Labs\var_19\lab5\Form_5.cs">

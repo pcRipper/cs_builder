@@ -1,6 +1,6 @@
 ﻿namespace cs_builder.Libraries.Labs.var_19.lab3
 {
-    partial class Form1
+    partial class Form_3
     {
         /// <summary>
         /// Required designer variable.
@@ -136,7 +136,7 @@
             label5.Size = new Size(0, 15);
             label5.TabIndex = 10;
             // 
-            // Form1
+            // Form_3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -154,7 +154,7 @@
             Controls.Add(pictureBox1);
             MaximumSize = new Size(437, 536);
             MinimumSize = new Size(437, 536);
-            Name = "Form1";
+            Name = "Form_3";
             Text = "Painter";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
