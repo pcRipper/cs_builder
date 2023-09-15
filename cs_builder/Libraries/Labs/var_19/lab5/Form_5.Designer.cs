@@ -40,12 +40,12 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             groupBox2 = new GroupBox();
             button5 = new Button();
             textBox_path = new TextBox();
-            button_file = new Button();
             label3 = new Label();
             textBox4 = new TextBox();
             button_setReflection = new Button();
             pictureBox2 = new PictureBox();
             button_draw = new Button();
+            button_save = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -53,7 +53,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(69, 29);
+            textBox1.Location = new Point(63, 12);
             textBox1.Margin = new Padding(4, 3, 4, 3);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(116, 23);
@@ -61,7 +61,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(69, 60);
+            textBox2.Location = new Point(63, 43);
             textBox2.Margin = new Padding(4, 3, 4, 3);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(116, 23);
@@ -71,7 +71,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(33, 29);
+            label1.Location = new Point(27, 12);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(30, 18);
@@ -82,7 +82,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(33, 60);
+            label2.Location = new Point(27, 43);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(26, 18);
@@ -113,7 +113,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             button3.TabIndex = 1;
             button3.Text = "XML";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button3.Click += xml_serialize;
             // 
             // button2
             // 
@@ -125,7 +125,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             button2.TabIndex = 0;
             button2.Text = "Binary";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += binary_serialize;
             // 
             // button4
             // 
@@ -137,7 +137,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             button4.TabIndex = 2;
             button4.Text = "Binary";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button4.Click += binary_deserialize;
             // 
             // groupBox2
             // 
@@ -163,27 +163,15 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             button5.TabIndex = 3;
             button5.Text = "XML";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button5.Click += xml_deserialize;
             // 
             // textBox_path
             // 
             textBox_path.Location = new Point(79, 112);
             textBox_path.Margin = new Padding(4, 3, 4, 3);
             textBox_path.Name = "textBox_path";
-            textBox_path.Size = new Size(338, 23);
+            textBox_path.Size = new Size(374, 23);
             textBox_path.TabIndex = 9;
-            // 
-            // button_file
-            // 
-            button_file.Font = new Font("Calibri", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button_file.Location = new Point(425, 113);
-            button_file.Margin = new Padding(4, 3, 4, 3);
-            button_file.Name = "button_file";
-            button_file.Size = new Size(34, 23);
-            button_file.TabIndex = 10;
-            button_file.Text = "...";
-            button_file.UseVisualStyleBackColor = true;
-            button_file.Click += button_file_Click;
             // 
             // label3
             // 
@@ -236,18 +224,30 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             button_draw.TabIndex = 15;
             button_draw.Text = "Draw";
             button_draw.UseVisualStyleBackColor = true;
+            button_draw.Click += button_draw_Click_1;
+            // 
+            // button_save
+            // 
+            button_save.Font = new Font("Calibri", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button_save.Location = new Point(63, 73);
+            button_save.Name = "button_save";
+            button_save.Size = new Size(116, 23);
+            button_save.TabIndex = 16;
+            button_save.Text = "Save";
+            button_save.UseVisualStyleBackColor = true;
+            button_save.Click += button_save_Click;
             // 
             // Form_5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(466, 460);
+            Controls.Add(button_save);
             Controls.Add(button_draw);
             Controls.Add(pictureBox2);
             Controls.Add(button_setReflection);
             Controls.Add(textBox4);
             Controls.Add(label3);
-            Controls.Add(button_file);
             Controls.Add(textBox_path);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -281,13 +281,12 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
         private GroupBox groupBox2;
         private Button button5;
         private TextBox textBox_path;
-        private Button button_file;
         private Label label3;
         private TextBox textBox4;
         private Button button_setReflection;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button button_draw;
+        private Button button_save;
     }
 }
 

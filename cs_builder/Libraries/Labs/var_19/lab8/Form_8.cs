@@ -21,7 +21,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab8
             pg = new DB_PG();
             var result = pg.connect(new Dictionary<string, string>{
                 {"server","localhost" },
-                {"port","5433"},
+                {"port","5432"},
                 {"db_name","test_db" },
                 {"user_name","postgres" },
                 {"password","root" }

@@ -1,6 +1,7 @@
 ﻿using Extensions;
 using cs_builder.Libraries.Labs.var_19.lab8;
 using cs_builder.Libraries.Labs.var_19.lab3;
+using cs_builder.Libraries.Labs.var_19.lab5;
 
 namespace cs_builder
 {
@@ -8,7 +9,7 @@ namespace cs_builder
     {
         static void Main(string[] args)
         {
-            Lab8.lab8_main();
+            Lab5.lab5_main();
         }
     }
 }

@@ -6,22 +6,27 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
+#pragma warning disable SYSLIB0011
+
 namespace cs_builder.Libraries.Labs.var_19.lab5
 {
     public partial class Form_5 : Form
     {
         static FileStream fs;
-        private void set_status(string text)
+        static Star star;
+
+        public Form_5()
         {
-
+            InitializeComponent();
+            pictureBox2.Image = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            star = new Star();
         }
-
         private bool check_file(string path)
         {
 
             if (path.Length == 0)
             {
-                set_status("Wrong file path input!");
+                MessageBox.Show("Wrong file path input!");
                 return false;
             }
 
@@ -29,138 +34,126 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
 
             if (!info.Exists)
             {
-                set_status("File is missing");
+                MessageBox.Show("File is missing");
                 return false;
             }
 
             return true;
         }
 
-        public Form_5()
+        private void set_fields()
         {
-            InitializeComponent();
-            button_draw_Click(null, null);
-        }
-
-        private void button_file_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog file_pick = new OpenFileDialog();
-            if (file_pick.ShowDialog() == DialogResult.OK)
-            {
-                textBox_path.Text = file_pick.FileName;
-            }
+            textBox1.Text = star.a.ToString();
+            textBox2.Text = star.b.ToString();
         }
 
         XmlSerializer formatter_xml = new XmlSerializer(typeof(Star));
         BinaryFormatter formatter_binary = new BinaryFormatter();
-        private static bool color = true;
-        private UInt16 ticks = 0;
 
-        private void button2_Click(object sender, EventArgs e)
+        private void binary_serialize(object sender, EventArgs e)
         {
-            if (check_file(textBox_path.Text))
+            if (!check_file(textBox_path.Text)) return;
+
+            try
             {
                 using (fs = new FileStream(textBox_path.Text, FileMode.Open))
                 {
-                    //formatter_binary.Serialize(fs, null);
-                    set_status("Binary serialization success!");
+                    formatter_binary.Serialize(fs, star);
                 }
+            }catch  (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void xml_serialize(object sender, EventArgs e)
         {
-            if (check_file(textBox_path.Text))
+            if (!check_file(textBox_path.Text)) return;
+
+            try
             {
-                using (fs = new FileStream(textBox_path.Text, FileMode.Open))
+                using (fs = new FileStream(textBox_path.Text, FileMode.Create))
                 {
-                    //formatter_xml.Serialize(fs, puck_1);
-                    set_status("XML serialization success!");
+                    formatter_xml.Serialize(fs, star);
                 }
+            }
+            catch (Exception ex) { 
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void binary_deserialize(object sender, EventArgs e)
         {
-            if (check_file(textBox_path.Text))
-            {
+            if (!check_file(textBox_path.Text)) return;
 
+            try
+            {
                 using (fs = new FileStream(textBox_path.Text, FileMode.Open))
                 {
-                    //puck_1 = (Star)formatter_binary.Deserialize(fs);
+                    star = (Star)formatter_binary.Deserialize(fs);
+                    set_fields();
                 }
 
-                //set_fields();
-                set_status("Binary deserialization success!");
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void xml_deserialize(object sender, EventArgs e)
         {
-            if (check_file(textBox_path.Text))
+            if (!check_file(textBox_path.Text)) return;
+
+            try
             {
                 using (fs = new FileStream(textBox_path.Text, FileMode.Open))
                 {
-                    //puck_1 = (Star)formatter_xml.Deserialize(fs);
+                    star = (Star)formatter_xml.Deserialize(fs);
+                    set_fields();
                 }
-
-                //set_fields();
-                set_status("XML deserialization success!");
+                
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button_setReflection_Click(object sender, EventArgs e)
         {
-            string nl = Environment.NewLine;
 
-            textBox4.Text = "";
+            textBox4.Text = String.Empty;
+            textBox4.Text += "Methods of class Star :" + Environment.NewLine;
 
-            MethodInfo[] methods = typeof(Star).GetMethods();
-            MemberInfo[] members = typeof(Star).GetMembers();
-
-            textBox4.Text += "Methods of class Star :" + nl;
-
-            foreach (MethodInfo m in methods)
+            foreach (MethodInfo m in typeof(Star).GetMethods())
             {
-                textBox4.Text += m.ToString() + nl;
+                textBox4.Text += m.ToString() + Environment.NewLine;
             }
 
-            textBox4.Text += nl + "Members of class Star :" + nl;
+            textBox4.Text += Environment.NewLine + "Members of class Star :" + Environment.NewLine;
 
-            foreach (MemberInfo m in members)
+            foreach (MemberInfo m in typeof(Star).GetMembers())
             {
-                textBox4.Text += m.ToString() + nl;
+                textBox4.Text += m.ToString() + Environment.NewLine;
             }
         }
 
-        private void button_draw_Click(object sender, EventArgs e)
+        private void button_draw_Click_1(object sender, EventArgs e)
         {
-
+            new Star().Draw(ref pictureBox2);
         }
 
-        private void button_setArea_Click(object sender, EventArgs e)
+        private void button_save_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button_setA_Click(object sender, EventArgs e)
-        {
-            if (Double.TryParse(textBox1.Text, out double a))
+            try
             {
-                if (a > 0)
-                {
-                    //puck_1.A = a;
-                    set_status("Values seted!");
-                    //set_fields();
-                }
-                else
-                {
-                    set_status("Value can not be less than 0!");
-                }
+                star = new Star(
+                    Convert.ToInt32(textBox1.Text),
+                    Convert.ToInt32(textBox2.Text)
+                );
             }
-            else
+            catch(Exception ex)
             {
-                set_status("Wrong input!");
+                MessageBox.Show(ex.Message);
             }
         }
     }
