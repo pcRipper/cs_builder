@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Extensions
 {
-    static class Extensions
+    public static partial class Extensions
     {
         public static string encodeMD5(string data)
         {

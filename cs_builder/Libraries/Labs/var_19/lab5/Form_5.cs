@@ -60,7 +60,8 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
                 {
                     formatter_binary.Serialize(fs, star);
                 }
-            }catch  (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -77,7 +78,8 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
                     formatter_xml.Serialize(fs, star);
                 }
             }
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -94,7 +96,8 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
                     set_fields();
                 }
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -111,8 +114,9 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
                     star = (Star)formatter_xml.Deserialize(fs);
                     set_fields();
                 }
-                
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -151,7 +155,27 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
                     Convert.ToInt32(textBox2.Text)
                 );
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void openFileDialog(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "*.txt|*.xml";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFilePath = dialog.FileName;
+
+                    textBox_path.Text = selectedFilePath;
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

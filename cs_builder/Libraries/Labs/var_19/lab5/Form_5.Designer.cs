@@ -46,6 +46,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             pictureBox2 = new PictureBox();
             button_draw = new Button();
             button_save = new Button();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -170,7 +171,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             textBox_path.Location = new Point(79, 112);
             textBox_path.Margin = new Padding(4, 3, 4, 3);
             textBox_path.Name = "textBox_path";
-            textBox_path.Size = new Size(374, 23);
+            textBox_path.Size = new Size(334, 23);
             textBox_path.TabIndex = 9;
             // 
             // label3
@@ -237,11 +238,23 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
             button_save.UseVisualStyleBackColor = true;
             button_save.Click += button_save_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(420, 112);
+            button1.Name = "button1";
+            button1.Size = new Size(39, 23);
+            button1.TabIndex = 17;
+            button1.Text = "...";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += openFileDialog;
+            // 
             // Form_5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(466, 460);
+            Controls.Add(button1);
             Controls.Add(button_save);
             Controls.Add(button_draw);
             Controls.Add(pictureBox2);
@@ -287,6 +300,7 @@ namespace cs_builder.Libraries.Labs.var_19.lab5
         private PictureBox pictureBox2;
         private Button button_draw;
         private Button button_save;
+        private Button button1;
     }
 }
 
